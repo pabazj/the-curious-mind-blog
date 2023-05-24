@@ -1,0 +1,31 @@
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.listItem{
+    font-size : medium;
+    margin-left: 20px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.listItem:hover {
+    color: #E5E4E2;
+  }
+.sugestionText{
+  font-size: 20px;
+  border: none;
+  padding: 20px;
+  width: 70vw;
+  font-family: inherit;
+}
+
+.sugestionText::placeholder {
+    color: rgb(189, 185, 185);
+    font-weight: 400;
+  }
+  
+  .sugestionText:focus {
+    outline-style: none;
+  }
