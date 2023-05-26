@@ -1,49 +1,46 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { auth } from '../firebase/config';
 
-function NavBar({ isAuthenticated, handleSignOut, userData }) {
-    // const isAuthenticated = true;
+function NavBar({ handleSignOut}) {
+
+  const isValied = localStorage.getItem('isAuthenticated');
+ 
     return (
-        // <nav >
-        //     <Link to="/"> Home</Link>
-        //     {isAuthenticated && <Link to="/createBlog"> Create Blog</Link>}
-        //     {!isAuthenticated ? <Link to="/login"> Login</Link> : <button onClick={handleSignOut}><img src={userData?.photoURL
-        //     } /></button>}
-        // </nav>
     <div className="top">
       <div className="topLeft">
         <div className="topIcon">
-        <Link className="navLink" to="/">
-          Writeopia</Link></div>
+        <div className="topIconText">
+          Writeopia</div></div>
           
       </div>
       <div className="topCenter">
         <ul className="topList">
           <li className="topListItem">
-            {isAuthenticated && <Link className="navLink" to="/createBlog"> Create Blog</Link>}
+            {isValied && <Link className="navLink" to="/createBlog"> Create Blog</Link>}
             </li>
         
         </ul>
       </div>
       <div className="topRight">
-        {isAuthenticated  ? (
+        {isValied  ? (
           <div className="link">
             <img
               className="topImg"
-              src={userData?.photoURL}
+              src={auth?.currentUser?.photoURL}
               alt=""
             />
           </div>
         ) : (
           <ul className="topList">
             <li className="topListItem">
-              <Link className="link" to="/login">
-                LOGIN
+              <Link className="topSearchIcon" to="/login">
+                Login
               </Link>
             </li>
           </ul>
         )}
-         {isAuthenticated && <button className="topSearchIcon" onClick={handleSignOut}>Logout</button>}
+         {isValied && <button className="topSearchIcon" onClick={handleSignOut}>Logout</button>}
         
       </div>
     </div>

@@ -17,8 +17,8 @@ function Blog() {
       <h1 className="singlePostTitle">
       {data?.title}
         <div className="singlePostEdit">
-          <i className="singlePostIcon far fa-edit"> test</i>
-          <i className="singlePostIcon far fa-trash-alt">new</i>
+          {/* <i className="singlePostIcon far fa-edit"> Edit</i> */}
+          {/* <i className="singlePostIcon far fa-trash-alt">new</i> */}
         </div>
       </h1>
       <div className="singlePostInfo">

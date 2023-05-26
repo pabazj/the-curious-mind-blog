@@ -29,7 +29,6 @@ function App() {
     <>
       <Router>
       <NavBar
-        isAuthenticated={isAuthenticated}
         handleSignOut={handleSignOut}
         userData={userData} />
 

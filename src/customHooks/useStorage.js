@@ -9,7 +9,7 @@ const useStorage = (file) => {
     const [imageUrl, setImageUrl] = useState(null)
 
     useEffect(() => {
-        console.log(file, '..hook')
+    
         if (file) {
             const storageRef = ref(storage, `images/${file.name}`)
             const uploadTask = uploadBytesResumable(storageRef, file);

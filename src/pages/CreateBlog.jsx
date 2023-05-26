@@ -23,12 +23,10 @@ function CreateBlog() {
         let imageData = e.target.files[0]
      
         if(imageData && TYPES.includes(imageData.type)) {
-          console.log('h 1')
             setError(null)
             setFile(imageData)
         }
         else {
-          console.log('h 2')
             setFile(null) 
             setError("Plase select an image (png, jpg or jpeg)")
         }

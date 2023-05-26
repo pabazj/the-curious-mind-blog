@@ -7,7 +7,9 @@ import { dateTime } from '../utils/DateTime'
 import { AiOutlineDelete } from 'react-icons/ai';
 
 
-function Blogs({ blogList, handleDeleteBlog, isAuthenticated }) {
+function Blogs({ blogList, handleDeleteBlog }) {
+
+  const isAuthenticated = localStorage.getItem('isAuthenticated');
 
   return (
     <div className="posts">
